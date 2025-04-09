@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "static": "next build && next export && touch ./out/.nojekyll && echo 'www.samobrien.me' > ./out/CNAME",
     "start": "next start",
     "lint": "next lint"
   },
