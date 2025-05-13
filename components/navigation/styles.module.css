@@ -1,0 +1,133 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 2rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.nav.scrolled {
+  background: rgba(8, 11, 3, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(92, 219, 149, 0.1);
+}
+
+.navContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoLink {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #fff 0%, #5cdb95 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 3rem;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navLinks li a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #00c2ff 0%, #5cdb95 100%);
+  transition: width 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #5cdb95;
+}
+
+.navLinks li a:hover:after {
+  width: 100%;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ctaButton {
+  color: rgba(0, 0, 0, 0.7);
+  display: inline-block;
+  background: linear-gradient(135deg, #00c2ff 0%, #5cdb95 100%);
+  background-color: hsla(73, 47%, 4%, 1);
+  padding: 0.5em 1.25em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.ctaButton:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background-color: hsla(73, 47%, 4%, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 194, 255, 0.3);
+}
+
+.aboutButton {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(92, 219, 149, 0.3);
+}
+
+.aboutButton:hover {
+  color: #5cdb95;
+  background: rgba(92, 219, 149, 0.1);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .nav,
+  .nav.scrolled {
+    padding: 1rem;
+  }
+
+  .aboutButton {
+    display: inline-block;
+  }
+}
