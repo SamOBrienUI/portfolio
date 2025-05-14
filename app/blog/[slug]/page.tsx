@@ -7,27 +7,28 @@ export async function generateStaticParams() {
   const posts = await getAllPosts();
 
   return posts.map((post) => ({
-    id: post.slug,
+    slug: post.slug,
   }));
 }
 
 export async function generateMetadata({
-  params: { id },
+  params: { slug },
 }: {
-  params: { id: string };
+  params: { slug: string };
 }) {
-  const { title } = await getPostById(id);
+  const { title } = await getPostById(slug);
   return {
     title,
   };
 }
 
 export default async function BlogPostPage({
-  params: { id },
+  params,
 }: {
-  params: { id: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { html, title, date } = await getPostById(id);
+  const { slug } = await params;
+  const { html, title, date } = await getPostById(slug);
 
   if (!html) {
     notFound();
@@ -52,8 +53,9 @@ export default async function BlogPostPage({
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M19 12H5"></path>
-              <path d="M12 19l-7-7 7-7"></path>
+              <title>Arrow left</title>
+              <path d="M19 12H5" />
+              <path d="M12 19l-7-7 7-7" />
             </svg>
             Back to all posts
           </Link>
