@@ -7,7 +7,20 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": []
+    "include": ["app", "components", "lib"],
+    "ignore": [
+      "node_modules",
+      "build",
+      "dist",
+      "./out/**/**",
+      ".next",
+      ".github/**/**",
+      ".vercel",
+      ".turbo",
+      ".cache",
+      ".idea",
+      ".vscode"
+    ]
   },
   "formatter": {
     "enabled": true,

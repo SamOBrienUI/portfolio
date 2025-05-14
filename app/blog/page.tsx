@@ -1,5 +1,5 @@
-import ContentWrapper from "../../components/layout/ContentWrapper";
 import { RecentPosts } from "../../components/blog/RecentPosts";
+import ContentWrapper from "../../components/layout/ContentWrapper";
 import { getAllPosts } from "../../lib/api";
 
 export default async function Blog() {

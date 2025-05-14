@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import ContentWrapper from "../../../components/layout/ContentWrapper";
 import { getAllPosts, getPostById } from "../../../lib/api";
 
@@ -12,10 +12,11 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const { title } = await getPostById(slug);
   return {
     title,

@@ -7,7 +7,7 @@
     "build": "next build",
     "static": "next build && touch ./out/.nojekyll && echo 'www.samobrien.me' > ./out/CNAME",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome check ."
   },
   "dependencies": {
     "@leafac/rehype-shiki": "^2.2.1",

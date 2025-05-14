@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { PostCard } from "./PostCard";
-import { ArrowRightIcon } from "./icons/ArrowRightIcon";
 
 type Post = {
   slug: string;
